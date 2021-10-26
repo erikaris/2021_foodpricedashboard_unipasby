@@ -24,6 +24,8 @@ style <- HTML(
 )
 
 ui <- div(
+  # tags$head -> untuk menambahkan element di tag <head>
+  # tags$style -> untuk membuat tag <style>
   tags$head(tags$style(style)), 
   "asdf"
 )
