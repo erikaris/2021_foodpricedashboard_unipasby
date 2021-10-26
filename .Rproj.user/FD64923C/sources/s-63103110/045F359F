@@ -1,0 +1,27 @@
+{
+    "id": "045F359F",
+    "path": "/run/media/soedomoto/PROJECT/2021-unipasby-pangan/app.R",
+    "project_path": "app.R",
+    "type": "r_source",
+    "hash": "3057061804",
+    "contents": "",
+    "dirty": false,
+    "created": 1635049150289.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "21,5",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1635049579,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1635049579888,
+    "read_only": false,
+    "read_only_alternatives": []
+}
