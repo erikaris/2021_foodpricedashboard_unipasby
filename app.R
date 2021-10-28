@@ -1,37 +1,95 @@
 library(shiny)
+library(bs4Dash)
+library(highcharter)
 
-style <- HTML(
-  '
-    body {
-        height: 100%;
-        background-image: -webkit-radial-gradient(circle, #3f91cd, #0e314b);
-        background-image: radial-gradient(circle, #3f91cd, #0e314b);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        padding-bottom: 0 !important;
-    }
-    body {
-        font-family: "Roboto", sans-serif;
-        font-size: 13px;
-        line-height: 1.42857143;
-        color: #ffffff;
-        background-color: #3f91cd;
-    }
-    body {
-        margin: 0;
-    }
-  '
-)
-
-ui <- div(
-  # tags$head -> untuk menambahkan element di tag <head>
-  # tags$style -> untuk membuat tag <style>
-  tags$head(tags$style(style)), 
-  "asdf"
+ui <- dashboardPage(
+  header = dashboardHeader(
+    title = dashboardBrand(
+      title = "",
+      color = NULL,
+      href = "https://adminlte.io/themes/v3",
+      image = "https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png"
+    )
+  ),
+  sidebar = dashboardSidebar(disable = T),
+  body = dashboardBody(
+    fluidRow(
+      column(3, bs4Card(
+        width = 12,
+        closable = FALSE,
+        collapsible = FALSE,
+        headerBorder = FALSE,
+        "Lorem ipsum is so fun!"
+      )),
+      column(3, bs4Card(
+        width = 12,
+        closable = FALSE,
+        collapsible = FALSE,
+        headerBorder = FALSE,
+        "Lorem ipsum is so fun!"
+      )),
+      column(3, bs4Card(
+        width = 12,
+        closable = FALSE,
+        collapsible = FALSE,
+        headerBorder = FALSE,
+        "Lorem ipsum is so fun!"
+      )),
+      column(3, bs4Card(
+        width = 12,
+        closable = FALSE,
+        collapsible = FALSE,
+        headerBorder = FALSE,
+        "Lorem ipsum is so fun!"
+      ))
+    ),
+    fluidRow(
+      column(
+        width = 6,
+        bs4Card(
+          width = 12,
+          closable = FALSE,
+          collapsible = FALSE,
+          headerBorder = FALSE,
+          "Lorem ipsum is so fun!"
+        ),
+        bs4Card(
+          width = 12,
+          closable = FALSE,
+          collapsible = FALSE,
+          headerBorder = FALSE,
+          "Lorem ipsum is so fun!"
+        )
+      ),
+      column(
+        width = 6,
+        bs4Card(
+          width = 12,
+          closable = FALSE,
+          collapsible = FALSE,
+          headerBorder = FALSE,
+          highchartOutput("map_1")
+        )
+      )
+    )
+  ),
+  controlbar = dashboardControlbar()
 )
 
 server <- function(input, output, session) {
-  
+  output$map_1 <- renderHighchart({
+    hcmap(
+      "https://code.highcharts.com/mapdata/countries/id/id-all.js",
+      download_map_data = FALSE,
+      # data = df,
+      # value = "sum_potensi_teknikal",
+      # joinBy = c("fips", "id_prov"),
+      # name = "Potensi Teoritis",
+      # dataLabels = list(enabled = TRUE, format = "{point.alamat_provinsi}"),
+      # borderColor = "#FAFAFA", borderWidth = 0.05,
+      # tooltip = list(valueDecimals = 0, valuePrefix = "~", valueSuffix = " MW")
+    )
+  })
 }
 
 shinyApp(ui, server)

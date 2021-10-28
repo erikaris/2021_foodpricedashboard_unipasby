@@ -4,62 +4,62 @@ library(httr)
 library(dplyr)
 
 # Read the whole html
-html <- read_html("https://hargapangan.id/")
+html <- read_html("https://hargapangan.id/tabel-harga/pasar-tradisional/daerah")
 
 # Crawl commodities from select options
 id <- html %>% 
-  html_elements(xpath='//*[@id="commodity_id"]/option') %>% 
+  html_elements(xpath='//*[@id="filter_commodity_ids"]/option') %>% 
   html_attr("value")  %>% 
   str_trim()
 
 label <- html %>% 
-  html_elements(xpath='//*[@id="commodity_id"]/option') %>% 
+  html_elements(xpath='//*[@id="filter_commodity_ids"]/option') %>% 
   html_text() %>% 
   str_trim()
 
 commodities <- as.data.frame(list(id=id, label=label))
 
-# Crawl type of markets from select options
-id <- html %>% 
-  html_elements(xpath='//*[@id="price_type_id"]/option') %>% 
-  html_attr("value")  %>% 
-  str_trim()
+# # Crawl type of markets from select options
+# id <- html %>% 
+#   html_elements(xpath='//*[@id="price_type_id"]/option') %>% 
+#   html_attr("value")  %>% 
+#   str_trim()
+# 
+# label <- html %>% 
+#   html_elements(xpath='//*[@id="price_type_id"]/option') %>% 
+#   html_text() %>% 
+#   str_trim()
+# 
+# market_types <- as.data.frame(list(id=id, label=label))
 
-label <- html %>% 
-  html_elements(xpath='//*[@id="price_type_id"]/option') %>% 
-  html_text() %>% 
-  str_trim()
+# # Crawl information types from select options
+# id <- html %>% 
+#   html_elements(xpath='//*[@id="data_type"]/option') %>% 
+#   html_attr("value")  %>% 
+#   str_trim()
+# 
+# label <- html %>% 
+#   html_elements(xpath='//*[@id="data_type"]/option') %>% 
+#   html_text() %>% 
+#   str_trim()
+# 
+# information_types <- as.data.frame(list(id=id, label=label))
 
-market_types <- as.data.frame(list(id=id, label=label))
-
-# Crawl information types from select options
-id <- html %>% 
-  html_elements(xpath='//*[@id="data_type"]/option') %>% 
-  html_attr("value")  %>% 
-  str_trim()
-
-label <- html %>% 
-  html_elements(xpath='//*[@id="data_type"]/option') %>% 
-  html_text() %>% 
-  str_trim()
-
-information_types <- as.data.frame(list(id=id, label=label))
-
-# Crawl comparison periods from select options
-id <- html %>% 
-  html_elements(xpath='//*[@id="layout"]/option') %>% 
-  html_attr("value")  %>% 
-  str_trim()
-
-label <- html %>% 
-  html_elements(xpath='//*[@id="layout"]/option') %>% 
-  html_text() %>% 
-  str_trim()
-
-comparison_periods <- as.data.frame(list(id=id, label=label))
+# # Crawl comparison periods from select options
+# id <- html %>% 
+#   html_elements(xpath='//*[@id="layout"]/option') %>% 
+#   html_attr("value")  %>% 
+#   str_trim()
+# 
+# label <- html %>% 
+#   html_elements(xpath='//*[@id="layout"]/option') %>% 
+#   html_text() %>% 
+#   str_trim()
+# 
+# comparison_periods <- as.data.frame(list(id=id, label=label))
 
 # Crawl provinces from select options
-html <- read_html("https://hargapangan.id/tabel-harga/pasar-tradisional/daerah")
+# html <- read_html("https://hargapangan.id/tabel-harga/pasar-tradisional/daerah")
 
 id <- html %>% 
   html_elements(xpath='//*[@id="filter_province_ids"]/option') %>% 
@@ -144,7 +144,28 @@ for (regid in regencies$id) {
 markets <- as.data.frame(list(province=markets_prov, regency=markets_reg, 
                               id=markets_id, label=markets_label))
 
+json_body <- jsonlite::toJSON(list(
+  "task" = "",
+  "filter_commodity_ids[]" = "0",
+  "filter_commodity_ids[]" = "cat-1",
+  "filter_commodity_ids[]" = "1",
+  "filter_province_ids[]" = "0",
+  "filter_province_ids[]" = "1",
+  "filter_regency_ids[]" = "0",
+  "filter_market_ids[]" = "0",
+  "filter_all_commodities" = "0",
+  "format" = "html",
+  "price_type_id" = "1",
+  "filter_layout" = "default",
+  "filter_start_date" = "25-10-2021",
+  "filter_end_date" = "27-10-2021"
+), auto_unbox = TRUE)
 
+resp <- POST("https://hargapangan.id/tabel-harga/pasar-tradisional/daerah", body = json_body, encode = "raw") %>% 
+  content("text")
 
-json_body <- jsonlite::toJSON(list(a = 1, b = NULL), auto_unbox = TRUE)
-POST(b2, body = json_body, encode = "raw")
+data <- read_html(resp) %>% 
+  html_elements('#report') %>%
+  html_table()
+
+data[[1]]
