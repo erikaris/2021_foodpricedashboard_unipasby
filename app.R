@@ -60,14 +60,8 @@ ui <- dashboardPage(
           closable = FALSE,
           collapsible = FALSE,
           headerBorder = FALSE,
-          "Lorem ipsum is so fun!"
-        ),
-        bs4Card(
-          width = 12,
-          closable = FALSE,
-          collapsible = FALSE,
-          headerBorder = FALSE,
-          "Lorem ipsum is so fun!"
+          footer = uiOutput("plot_animated_slider"),
+          highchartOutput("plot_animated")
         )
       ),
       column(
@@ -77,19 +71,15 @@ ui <- dashboardPage(
           closable = FALSE,
           collapsible = FALSE,
           headerBorder = FALSE,
-          # dropdownMenu = dropdownMenu(
-          #   badgeStatus = "danger",
-          #   type = "notifications",
-          #   # notificationItem(
-          #   #   inputId = "triggerAction1",
-          #   #   message = "message 1",
-          #   #   from = "Divad Nojnarg",
-          #   #   image = "https://adminlte.io/themes/v3/dist/img/user3-128x128.jpg",
-          #   #   time = "today",
-          #   #   color = "lime"
-          #   # )
-          # ),
           highchartOutput("map_1")
+        ),
+        bs4Card(
+          width = 12,
+          closable = FALSE,
+          collapsible = FALSE,
+          headerBorder = FALSE,
+          title = textOutput("map_1_detail_header"),
+          highchartOutput("map_1_detail")
         )
       )
     )
@@ -99,7 +89,9 @@ ui <- dashboardPage(
 
 server <- function(input, output, session) {
   commodity_prices <- reactive({
-    read.csv2("commodity_prices.csv")
+    df <- read.csv2("commodity_prices.csv")
+    df$tanggal <- as.Date(df$tanggal, "%d/%m/%Y")
+    df
   })
   
   provinces <- reactive({
@@ -127,14 +119,32 @@ server <- function(input, output, session) {
   output$card_1 <- renderUI(h2(commodity_prices() %>% select(Komoditas..Rp.) %>% n_distinct()))
   output$card_2 <- renderUI(h2(markets() %>% nrow()))
   
-  observe({
-    commodity_max_price <- commodity_prices() %>% slice_max(harga)
-    output$card_max_price_rp <- renderUI(h2(paste("Rp.", commodity_max_price %>% select(harga) %>% unique())))
-    output$card_max_price_item <- renderUI(paste(commodity_max_price %>% select(Komoditas..Rp.) %>% unique(), collapase = ", "))
+  commodity_max_price <- reactive({
+    commodity_prices() %>% slice_max(harga)
+  })
+  
+  output$card_max_price_rp <- renderUI(h2(paste("Rp.", commodity_max_price() %>% select(harga) %>% unique())))
+  output$card_max_price_item <- renderUI(paste(commodity_max_price() %>% select(Komoditas..Rp.) %>% unique(), collapase = ", "))
+  
+  commodity_min_price <- reactive({
+    commodity_prices() %>% slice_min(harga)
+  })
+  
+  output$card_min_price_rp <- renderUI(h2(paste("Rp.", commodity_min_price() %>% select(harga) %>% unique())))
+  output$card_min_price_item <- renderUI(paste(commodity_min_price() %>% select(Komoditas..Rp.) %>% unique(), collapase = ", "))
+  
+  output$plot_animated_slider <- renderUI({
+    sliderInput("tanggal", "Tanggal",
+                min = min(commodity_prices()$tanggal), max = max(commodity_prices()$tanggal),
+                value = min(commodity_prices()$tanggal), animate = TRUE)
+  })
+  
+  output$plot_animated <- renderHighchart({
+    req(input$tanggal)
     
-    commodity_min_price <- commodity_prices() %>% slice_min(harga)
-    output$card_min_price_rp <- renderUI(h2(paste("Rp.", commodity_min_price %>% select(harga) %>% unique())))
-    output$card_min_price_item <- renderUI(paste(commodity_min_price %>% select(Komoditas..Rp.) %>% unique(), collapase = ", "))
+    commodity_prices() %>%
+      filter(tanggal <= input$tanggal) %>%
+      hchart("line", hcaes(x = tanggal, y = harga, group = Komoditas..Rp.))
   })
   
   output$map_1 <- renderHighchart({
@@ -147,8 +157,41 @@ server <- function(input, output, session) {
       name = "Harga komoditas",
       dataLabels = list(enabled = TRUE, format = "{point.label}"),
       borderColor = "#FAFAFA", borderWidth = 0.05,
-      tooltip = list(valueDecimals = 0, valuePrefix = "Rp.", valueSuffix = "")
+      tooltip = list(valueDecimals = 0, valuePrefix = "Rp.", valueSuffix = ""),
+      events = list(click = JS("
+        function(e) {
+          Shiny.onInputChange(\"map_1_on_click\", JSON.stringify({
+            'Komoditas..Rp.': e.point['Komoditas..Rp.'],
+            'highchart_prov_id': e.point['highchart_prov_id'],
+            'province': e.point['province'],
+            'regency': e.point['regency'],
+          }))
+        }
+      "))
     )
+  })
+  
+  map_1_on_click <- reactive({
+    jsonlite::fromJSON(input$map_1_on_click)
+  })
+  
+  output$map_1_detail_header <- renderText({
+    req(input$map_1_on_click)
+    
+    provs <- highchart_map_data() %>% 
+      filter(province == map_1_on_click()$province[1]) %>% 
+      select(label) %>%
+      unique()
+      
+    paste("Harga komoditas Prov. ", paste(provs, collapse = " "))
+  })
+  
+  output$map_1_detail <- renderHighchart({
+    req(input$map_1_on_click)
+    
+    highchart_map_data() %>% 
+      filter(province == map_1_on_click()$province[1]) %>% 
+      hchart("line", hcaes(x = tanggal, y = harga, group = Komoditas..Rp.))
   })
 }
 
