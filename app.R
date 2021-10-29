@@ -89,8 +89,11 @@ ui <- dashboardPage(
 
 server <- function(input, output, session) {
   commodity_prices <- reactive({
-    df <- read.csv2("commodity_prices.csv")
-    df$tanggal <- as.Date(df$tanggal, "%d/%m/%Y")
+    df <- as.data.frame(list())
+    withProgress(message = 'Sedang membaca data harga', value = 0, {
+      df <- read.csv2("commodity_prices.csv")
+      df$tanggal <- as.Date(df$tanggal, "%d/%m/%Y")
+    })
     df
   })
   

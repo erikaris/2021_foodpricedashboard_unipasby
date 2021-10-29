@@ -108,38 +108,52 @@ for (regid in regencies$id) {
 # take a look at the POST request sent when clicking "Lihat Laporan"
 
 commodity_prices <- NULL
-for (prov in provinces$id[1:1]) {
-  for (reg in regencies %>% filter(province == prov) %>% .$id[1:1]) {
-    json_body <- toJSON(list(
-      "task" = "",
-      "filter_commodity_ids[]" = "0",
-      "filter_province_ids[]" = "0",
-      "filter_province_ids[]" = prov,
-      "filter_regency_ids[]" = "0",
-      "filter_regency_ids[]" = reg,
-      "filter_market_ids[]" = "0",
-      "filter_all_commodities" = "0",
-      "format" = "html",
-      "price_type_id" = "1",
-      "filter_layout" = "default",
-      "filter_start_date" = "29-08-2021",
-      "filter_end_date" = "29-10-2021"
-    ), auto_unbox = TRUE)
-    
-    resp <- POST("https://hargapangan.id/tabel-harga/pasar-tradisional/daerah", body = json_body, encode = "json") %>% 
+for (prov in provinces$id) {
+  for (reg in regencies %>% filter(province == prov) %>% .$id) {
+    resp <- POST(
+      "https://hargapangan.id/tabel-harga/pasar-tradisional/daerah", 
+      content_type("application/x-www-form-urlencoded"), 
+      accept("text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"),
+      body = paste0(list(
+        "task=", 
+        "filter_commodity_ids%5B%5D=0", 
+        "filter_regency_ids%5B%5D=0", 
+        "filter_province_ids%5B%5D=0", 
+        "filter_market_ids%5B%5D=0", 
+        "filter_all_commodities=0", 
+        "format=html", 
+        "price_type_id=1", 
+        "1b5708ee366b3fcb44c12566d8112508=1", 
+        paste0("filter_province_ids%5B%5D=", prov), 
+        paste0("filter_regency_ids%5B%5D=", reg), 
+        "filter_layout=default", 
+        "filter_start_date=01-01-2021", 
+        "filter_end_date=30-10-2021"
+      ), collapse = "&")
+    ) %>% 
       content("text")
     
-    tmp_prices <- read_html(resp) %>% 
-      html_elements('#report') %>%
-      html_table() %>% 
-      .[[1]] %>% 
-      pivot_longer(!c(No., `Komoditas (Rp)`), names_to = "tanggal", values_to = "harga")
+    tmp_table <- read_html(resp) %>% 
+      html_element('#report')
     
-    tmp_prices$province <- prov
-    tmp_prices$regency <- reg
-    
-    if (is.null(commodity_prices)) commodity_prices <- tmp_prices
-    else commodity_prices <- union(commodity_prices, tmp_prices)
+    if (! is.null(tmp_table) && ! is.na(tmp_table)) {
+      tmp_prices <- tmp_table %>%
+        html_table(convert=FALSE) %>%   # convert=FALSE untuk mencegah konversi yang salah untuk separator ribuan
+        pivot_longer(!c(No., `Komoditas (Rp)`), names_to = "tanggal", values_to = "harga")
+      
+      tmp_prices$harga <- gsub("\\.","", as.character(tmp_prices$harga)) # hapus dot pada separator ribuan
+      tmp_prices$harga <- gsub("\\-","", as.character(tmp_prices$harga)) # hapus dash pada harga
+      tmp_prices$harga <- tmp_prices$harga %>% as.numeric()
+      
+      tmp_prices$province <- prov
+      tmp_prices$regency <- reg
+      
+      if (is.null(commodity_prices)) {
+        commodity_prices <- tmp_prices
+      } else {
+        commodity_prices <- rbind(commodity_prices, tmp_prices) %>% distinct()
+      }
+    }
   }
 }
 
