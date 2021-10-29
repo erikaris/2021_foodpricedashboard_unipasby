@@ -2,6 +2,7 @@ library(rvest)
 library(stringr)
 library(httr)
 library(dplyr)
+library(tidyr)
 
 # Read the whole html
 html <- read_html("https://hargapangan.id/tabel-harga/pasar-tradisional/daerah")
@@ -144,28 +145,44 @@ for (regid in regencies$id) {
 markets <- as.data.frame(list(province=markets_prov, regency=markets_reg, 
                               id=markets_id, label=markets_label))
 
-json_body <- jsonlite::toJSON(list(
-  "task" = "",
-  "filter_commodity_ids[]" = "0",
-  "filter_commodity_ids[]" = "cat-1",
-  "filter_commodity_ids[]" = "1",
-  "filter_province_ids[]" = "0",
-  "filter_province_ids[]" = "1",
-  "filter_regency_ids[]" = "0",
-  "filter_market_ids[]" = "0",
-  "filter_all_commodities" = "0",
-  "format" = "html",
-  "price_type_id" = "1",
-  "filter_layout" = "default",
-  "filter_start_date" = "25-10-2021",
-  "filter_end_date" = "27-10-2021"
-), auto_unbox = TRUE)
+commodity_prices <- NULL
+for (prov in provinces$id[1:1]) {
+  for (reg in regencies %>% filter(province == prov) %>% .$id[1:1]) {
+    json_body <- jsonlite::toJSON(list(
+      "task" = "",
+      "filter_commodity_ids[]" = "0",
+      "filter_province_ids[]" = "0",
+      "filter_province_ids[]" = prov,
+      "filter_regency_ids[]" = "0",
+      "filter_regency_ids[]" = reg,
+      "filter_market_ids[]" = "0",
+      "filter_all_commodities" = "0",
+      "format" = "html",
+      "price_type_id" = "1",
+      "filter_layout" = "default",
+      "filter_start_date" = "25-10-2021",
+      "filter_end_date" = "27-10-2021"
+    ), auto_unbox = TRUE)
+    
+    resp <- POST("https://hargapangan.id/tabel-harga/pasar-tradisional/daerah", body = json_body, encode = "json") %>% 
+      content("text")
+    
+    tmp_prices <- read_html(resp) %>% 
+      html_elements('#report') %>%
+      html_table() %>% 
+      .[[1]] %>% 
+      pivot_longer(!c(No., `Komoditas (Rp)`), names_to = "tanggal", values_to = "harga")
+    
+    tmp_prices$province <- prov
+    tmp_prices$regency <- reg
+    
+    if (is.null(commodity_prices)) commodity_prices <- tmp_prices
+    else commodity_prices <- union(commodity_prices, tmp_prices)
+  }
+}
 
-resp <- POST("https://hargapangan.id/tabel-harga/pasar-tradisional/daerah", body = json_body, encode = "raw") %>% 
-  content("text")
-
-data <- read_html(resp) %>% 
-  html_elements('#report') %>%
-  html_table()
-
-data[[1]]
+if (!is.null(provinces)) write.csv2(provinces, 'provinces.csv')
+if (!is.null(regencies)) write.csv2(regencies, 'regencies.csv')
+if (!is.null(markets)) write.csv2(markets, 'markets.csv')
+if (!is.null(commodities)) write.csv2(commodities, 'commodities.csv')
+if (!is.null(commodity_prices)) write.csv2(commodity_prices, 'commodity_prices.csv')

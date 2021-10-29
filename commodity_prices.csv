@@ -1,0 +1,385 @@
+"";"No.";"Komoditas (Rp)";"tanggal";"harga";"province";"regency"
+"1";"I";"Beras";"21/10/2021";11,65;"1";"1"
+"2";"I";"Beras";"22/10/2021";11,65;"1";"1"
+"3";"I";"Beras";"25/10/2021";11,65;"1";"1"
+"4";"I";"Beras";"26/10/2021";11,65;"1";"1"
+"5";"I";"Beras";"27/10/2021";11,65;"1";"1"
+"6";"I";"Beras";"28/10/2021";11,65;"1";"1"
+"7";"1";"Beras Kualitas Bawah I (kg)";"21/10/2021";10,65;"1";"1"
+"8";"1";"Beras Kualitas Bawah I (kg)";"22/10/2021";10,65;"1";"1"
+"9";"1";"Beras Kualitas Bawah I (kg)";"25/10/2021";10,65;"1";"1"
+"10";"1";"Beras Kualitas Bawah I (kg)";"26/10/2021";10,65;"1";"1"
+"11";"1";"Beras Kualitas Bawah I (kg)";"27/10/2021";10,65;"1";"1"
+"12";"1";"Beras Kualitas Bawah I (kg)";"28/10/2021";10,65;"1";"1"
+"13";"2";"Beras Kualitas Bawah II (kg)";"21/10/2021";10,35;"1";"1"
+"14";"2";"Beras Kualitas Bawah II (kg)";"22/10/2021";10,35;"1";"1"
+"15";"2";"Beras Kualitas Bawah II (kg)";"25/10/2021";10,3;"1";"1"
+"16";"2";"Beras Kualitas Bawah II (kg)";"26/10/2021";10,35;"1";"1"
+"17";"2";"Beras Kualitas Bawah II (kg)";"27/10/2021";10,3;"1";"1"
+"18";"2";"Beras Kualitas Bawah II (kg)";"28/10/2021";10,3;"1";"1"
+"19";"3";"Beras Kualitas Medium I (kg)";"21/10/2021";11,7;"1";"1"
+"20";"3";"Beras Kualitas Medium I (kg)";"22/10/2021";11,7;"1";"1"
+"21";"3";"Beras Kualitas Medium I (kg)";"25/10/2021";11,7;"1";"1"
+"22";"3";"Beras Kualitas Medium I (kg)";"26/10/2021";11,7;"1";"1"
+"23";"3";"Beras Kualitas Medium I (kg)";"27/10/2021";11,7;"1";"1"
+"24";"3";"Beras Kualitas Medium I (kg)";"28/10/2021";11,7;"1";"1"
+"25";"4";"Beras Kualitas Medium II (kg)";"21/10/2021";11,45;"1";"1"
+"26";"4";"Beras Kualitas Medium II (kg)";"22/10/2021";11,45;"1";"1"
+"27";"4";"Beras Kualitas Medium II (kg)";"25/10/2021";11,45;"1";"1"
+"28";"4";"Beras Kualitas Medium II (kg)";"26/10/2021";11,45;"1";"1"
+"29";"4";"Beras Kualitas Medium II (kg)";"27/10/2021";11,45;"1";"1"
+"30";"4";"Beras Kualitas Medium II (kg)";"28/10/2021";11,45;"1";"1"
+"31";"5";"Beras Kualitas Super I (kg)";"21/10/2021";12,95;"1";"1"
+"32";"5";"Beras Kualitas Super I (kg)";"22/10/2021";12,95;"1";"1"
+"33";"5";"Beras Kualitas Super I (kg)";"25/10/2021";12,95;"1";"1"
+"34";"5";"Beras Kualitas Super I (kg)";"26/10/2021";13;"1";"1"
+"35";"5";"Beras Kualitas Super I (kg)";"27/10/2021";12,95;"1";"1"
+"36";"5";"Beras Kualitas Super I (kg)";"28/10/2021";12,95;"1";"1"
+"37";"6";"Beras Kualitas Super II (kg)";"21/10/2021";12,55;"1";"1"
+"38";"6";"Beras Kualitas Super II (kg)";"22/10/2021";12,55;"1";"1"
+"39";"6";"Beras Kualitas Super II (kg)";"25/10/2021";12,55;"1";"1"
+"40";"6";"Beras Kualitas Super II (kg)";"26/10/2021";12,55;"1";"1"
+"41";"6";"Beras Kualitas Super II (kg)";"27/10/2021";12,55;"1";"1"
+"42";"6";"Beras Kualitas Super II (kg)";"28/10/2021";12,55;"1";"1"
+"43";"II";"Daging Ayam";"21/10/2021";36;"1";"1"
+"44";"II";"Daging Ayam";"22/10/2021";36,15;"1";"1"
+"45";"II";"Daging Ayam";"25/10/2021";35,95;"1";"1"
+"46";"II";"Daging Ayam";"26/10/2021";36,15;"1";"1"
+"47";"II";"Daging Ayam";"27/10/2021";36,05;"1";"1"
+"48";"II";"Daging Ayam";"28/10/2021";36,1;"1";"1"
+"49";"1";"Daging Ayam Ras Segar (kg)";"21/10/2021";36;"1";"1"
+"50";"1";"Daging Ayam Ras Segar (kg)";"22/10/2021";36,15;"1";"1"
+"51";"1";"Daging Ayam Ras Segar (kg)";"25/10/2021";35,95;"1";"1"
+"52";"1";"Daging Ayam Ras Segar (kg)";"26/10/2021";36,15;"1";"1"
+"53";"1";"Daging Ayam Ras Segar (kg)";"27/10/2021";36,05;"1";"1"
+"54";"1";"Daging Ayam Ras Segar (kg)";"28/10/2021";36,1;"1";"1"
+"55";"III";"Daging Sapi";"21/10/2021";124,15;"1";"1"
+"56";"III";"Daging Sapi";"22/10/2021";124,15;"1";"1"
+"57";"III";"Daging Sapi";"25/10/2021";124,15;"1";"1"
+"58";"III";"Daging Sapi";"26/10/2021";124,25;"1";"1"
+"59";"III";"Daging Sapi";"27/10/2021";124,15;"1";"1"
+"60";"III";"Daging Sapi";"28/10/2021";124,2;"1";"1"
+"61";"1";"Daging Sapi Kualitas 1 (kg)";"21/10/2021";127,75;"1";"1"
+"62";"1";"Daging Sapi Kualitas 1 (kg)";"22/10/2021";127,75;"1";"1"
+"63";"1";"Daging Sapi Kualitas 1 (kg)";"25/10/2021";127,75;"1";"1"
+"64";"1";"Daging Sapi Kualitas 1 (kg)";"26/10/2021";127,85;"1";"1"
+"65";"1";"Daging Sapi Kualitas 1 (kg)";"27/10/2021";127,75;"1";"1"
+"66";"1";"Daging Sapi Kualitas 1 (kg)";"28/10/2021";127,8;"1";"1"
+"67";"2";"Daging Sapi Kualitas 2 (kg)";"21/10/2021";118,5;"1";"1"
+"68";"2";"Daging Sapi Kualitas 2 (kg)";"22/10/2021";118,55;"1";"1"
+"69";"2";"Daging Sapi Kualitas 2 (kg)";"25/10/2021";118,5;"1";"1"
+"70";"2";"Daging Sapi Kualitas 2 (kg)";"26/10/2021";118,5;"1";"1"
+"71";"2";"Daging Sapi Kualitas 2 (kg)";"27/10/2021";118,5;"1";"1"
+"72";"2";"Daging Sapi Kualitas 2 (kg)";"28/10/2021";118,55;"1";"1"
+"73";"IV";"Telur Ayam";"21/10/2021";23;"1";"1"
+"74";"IV";"Telur Ayam";"22/10/2021";22,95;"1";"1"
+"75";"IV";"Telur Ayam";"25/10/2021";23;"1";"1"
+"76";"IV";"Telur Ayam";"26/10/2021";23,05;"1";"1"
+"77";"IV";"Telur Ayam";"27/10/2021";23,05;"1";"1"
+"78";"IV";"Telur Ayam";"28/10/2021";23,1;"1";"1"
+"79";"1";"Telur Ayam Ras Segar
+ (kg)";"21/10/2021";23;"1";"1"
+"80";"1";"Telur Ayam Ras Segar
+ (kg)";"22/10/2021";22,95;"1";"1"
+"81";"1";"Telur Ayam Ras Segar
+ (kg)";"25/10/2021";23;"1";"1"
+"82";"1";"Telur Ayam Ras Segar
+ (kg)";"26/10/2021";23,05;"1";"1"
+"83";"1";"Telur Ayam Ras Segar
+ (kg)";"27/10/2021";23,05;"1";"1"
+"84";"1";"Telur Ayam Ras Segar
+ (kg)";"28/10/2021";23,1;"1";"1"
+"85";"V";"Bawang Merah";"21/10/2021";29,8;"1";"1"
+"86";"V";"Bawang Merah";"22/10/2021";29,75;"1";"1"
+"87";"V";"Bawang Merah";"25/10/2021";29,6;"1";"1"
+"88";"V";"Bawang Merah";"26/10/2021";29,65;"1";"1"
+"89";"V";"Bawang Merah";"27/10/2021";29,6;"1";"1"
+"90";"V";"Bawang Merah";"28/10/2021";29,65;"1";"1"
+"91";"1";"Bawang Merah Ukuran Sedang (kg)";"21/10/2021";29,8;"1";"1"
+"92";"1";"Bawang Merah Ukuran Sedang (kg)";"22/10/2021";29,75;"1";"1"
+"93";"1";"Bawang Merah Ukuran Sedang (kg)";"25/10/2021";29,6;"1";"1"
+"94";"1";"Bawang Merah Ukuran Sedang (kg)";"26/10/2021";29,65;"1";"1"
+"95";"1";"Bawang Merah Ukuran Sedang (kg)";"27/10/2021";29,6;"1";"1"
+"96";"1";"Bawang Merah Ukuran Sedang (kg)";"28/10/2021";29,65;"1";"1"
+"97";"VI";"Bawang Putih";"21/10/2021";29,45;"1";"1"
+"98";"VI";"Bawang Putih";"22/10/2021";29,45;"1";"1"
+"99";"VI";"Bawang Putih";"25/10/2021";29,45;"1";"1"
+"100";"VI";"Bawang Putih";"26/10/2021";29,5;"1";"1"
+"101";"VI";"Bawang Putih";"27/10/2021";29,45;"1";"1"
+"102";"VI";"Bawang Putih";"28/10/2021";29,5;"1";"1"
+"103";"1";"Bawang Putih Ukuran Sedang (kg)";"21/10/2021";29,45;"1";"1"
+"104";"1";"Bawang Putih Ukuran Sedang (kg)";"22/10/2021";29,45;"1";"1"
+"105";"1";"Bawang Putih Ukuran Sedang (kg)";"25/10/2021";29,45;"1";"1"
+"106";"1";"Bawang Putih Ukuran Sedang (kg)";"26/10/2021";29,5;"1";"1"
+"107";"1";"Bawang Putih Ukuran Sedang (kg)";"27/10/2021";29,45;"1";"1"
+"108";"1";"Bawang Putih Ukuran Sedang (kg)";"28/10/2021";29,5;"1";"1"
+"109";"VII";"Cabai Merah";"21/10/2021";34,4;"1";"1"
+"110";"VII";"Cabai Merah";"22/10/2021";34,75;"1";"1"
+"111";"VII";"Cabai Merah";"25/10/2021";35,45;"1";"1"
+"112";"VII";"Cabai Merah";"26/10/2021";35,4;"1";"1"
+"113";"VII";"Cabai Merah";"27/10/2021";35,35;"1";"1"
+"114";"VII";"Cabai Merah";"28/10/2021";35,35;"1";"1"
+"115";"1";"Cabai Merah Besar (kg)";"21/10/2021";33,35;"1";"1"
+"116";"1";"Cabai Merah Besar (kg)";"22/10/2021";33,7;"1";"1"
+"117";"1";"Cabai Merah Besar (kg)";"25/10/2021";33,85;"1";"1"
+"118";"1";"Cabai Merah Besar (kg)";"26/10/2021";33,85;"1";"1"
+"119";"1";"Cabai Merah Besar (kg)";"27/10/2021";33,75;"1";"1"
+"120";"1";"Cabai Merah Besar (kg)";"28/10/2021";33,6;"1";"1"
+"121";"2";"Cabai Merah Keriting  (kg)";"21/10/2021";34,6;"1";"1"
+"122";"2";"Cabai Merah Keriting  (kg)";"22/10/2021";34,95;"1";"1"
+"123";"2";"Cabai Merah Keriting  (kg)";"25/10/2021";35,8;"1";"1"
+"124";"2";"Cabai Merah Keriting  (kg)";"26/10/2021";35,6;"1";"1"
+"125";"2";"Cabai Merah Keriting  (kg)";"27/10/2021";35,55;"1";"1"
+"126";"2";"Cabai Merah Keriting  (kg)";"28/10/2021";35,6;"1";"1"
+"127";"VIII";"Cabai Rawit";"21/10/2021";39,4;"1";"1"
+"128";"VIII";"Cabai Rawit";"22/10/2021";38,95;"1";"1"
+"129";"VIII";"Cabai Rawit";"25/10/2021";37,7;"1";"1"
+"130";"VIII";"Cabai Rawit";"26/10/2021";37,4;"1";"1"
+"131";"VIII";"Cabai Rawit";"27/10/2021";37,25;"1";"1"
+"132";"VIII";"Cabai Rawit";"28/10/2021";37,05;"1";"1"
+"133";"1";"Cabai Rawit Hijau (kg)";"21/10/2021";35,95;"1";"1"
+"134";"1";"Cabai Rawit Hijau (kg)";"22/10/2021";35,6;"1";"1"
+"135";"1";"Cabai Rawit Hijau (kg)";"25/10/2021";34,8;"1";"1"
+"136";"1";"Cabai Rawit Hijau (kg)";"26/10/2021";34,55;"1";"1"
+"137";"1";"Cabai Rawit Hijau (kg)";"27/10/2021";34,2;"1";"1"
+"138";"1";"Cabai Rawit Hijau (kg)";"28/10/2021";34,1;"1";"1"
+"139";"2";"Cabai Rawit Merah (kg)";"21/10/2021";40,65;"1";"1"
+"140";"2";"Cabai Rawit Merah (kg)";"22/10/2021";40,05;"1";"1"
+"141";"2";"Cabai Rawit Merah (kg)";"25/10/2021";38,45;"1";"1"
+"142";"2";"Cabai Rawit Merah (kg)";"26/10/2021";38,15;"1";"1"
+"143";"2";"Cabai Rawit Merah (kg)";"27/10/2021";38,1;"1";"1"
+"144";"2";"Cabai Rawit Merah (kg)";"28/10/2021";37,75;"1";"1"
+"145";"IX";"Minyak Goreng";"21/10/2021";16,8;"1";"1"
+"146";"IX";"Minyak Goreng";"22/10/2021";16,85;"1";"1"
+"147";"IX";"Minyak Goreng";"25/10/2021";16,95;"1";"1"
+"148";"IX";"Minyak Goreng";"26/10/2021";17,05;"1";"1"
+"149";"IX";"Minyak Goreng";"27/10/2021";17,05;"1";"1"
+"150";"IX";"Minyak Goreng";"28/10/2021";17,2;"1";"1"
+"151";"1";"Minyak Goreng Curah (kg)";"21/10/2021";16,2;"1";"1"
+"152";"1";"Minyak Goreng Curah (kg)";"22/10/2021";16,25;"1";"1"
+"153";"1";"Minyak Goreng Curah (kg)";"25/10/2021";16,4;"1";"1"
+"154";"1";"Minyak Goreng Curah (kg)";"26/10/2021";16,5;"1";"1"
+"155";"1";"Minyak Goreng Curah (kg)";"27/10/2021";16,55;"1";"1"
+"156";"1";"Minyak Goreng Curah (kg)";"28/10/2021";16,6;"1";"1"
+"157";"2";"Minyak Goreng Kemasan Bermerk 1 (kg)";"21/10/2021";17,15;"1";"1"
+"158";"2";"Minyak Goreng Kemasan Bermerk 1 (kg)";"22/10/2021";17,2;"1";"1"
+"159";"2";"Minyak Goreng Kemasan Bermerk 1 (kg)";"25/10/2021";17,3;"1";"1"
+"160";"2";"Minyak Goreng Kemasan Bermerk 1 (kg)";"26/10/2021";17,35;"1";"1"
+"161";"2";"Minyak Goreng Kemasan Bermerk 1 (kg)";"27/10/2021";17,4;"1";"1"
+"162";"2";"Minyak Goreng Kemasan Bermerk 1 (kg)";"28/10/2021";17,55;"1";"1"
+"163";"3";"Minyak Goreng Kemasan Bermerk 2 (kg)";"21/10/2021";16,65;"1";"1"
+"164";"3";"Minyak Goreng Kemasan Bermerk 2 (kg)";"22/10/2021";16,7;"1";"1"
+"165";"3";"Minyak Goreng Kemasan Bermerk 2 (kg)";"25/10/2021";16,8;"1";"1"
+"166";"3";"Minyak Goreng Kemasan Bermerk 2 (kg)";"26/10/2021";16,85;"1";"1"
+"167";"3";"Minyak Goreng Kemasan Bermerk 2 (kg)";"27/10/2021";16,9;"1";"1"
+"168";"3";"Minyak Goreng Kemasan Bermerk 2 (kg)";"28/10/2021";17,05;"1";"1"
+"169";"X";"Gula Pasir";"21/10/2021";14,05;"1";"1"
+"170";"X";"Gula Pasir";"22/10/2021";14,25;"1";"1"
+"171";"X";"Gula Pasir";"25/10/2021";14,05;"1";"1"
+"172";"X";"Gula Pasir";"26/10/2021";14,05;"1";"1"
+"173";"X";"Gula Pasir";"27/10/2021";14,05;"1";"1"
+"174";"X";"Gula Pasir";"28/10/2021";14,05;"1";"1"
+"175";"1";"Gula Pasir Kualitas Premium (kg)";"21/10/2021";15,2;"1";"1"
+"176";"1";"Gula Pasir Kualitas Premium (kg)";"22/10/2021";15,25;"1";"1"
+"177";"1";"Gula Pasir Kualitas Premium (kg)";"25/10/2021";15,25;"1";"1"
+"178";"1";"Gula Pasir Kualitas Premium (kg)";"26/10/2021";15,25;"1";"1"
+"179";"1";"Gula Pasir Kualitas Premium (kg)";"27/10/2021";15,25;"1";"1"
+"180";"1";"Gula Pasir Kualitas Premium (kg)";"28/10/2021";15,25;"1";"1"
+"181";"2";"Gula Pasir Lokal (kg)";"21/10/2021";13,15;"1";"1"
+"182";"2";"Gula Pasir Lokal (kg)";"22/10/2021";13,55;"1";"1"
+"183";"2";"Gula Pasir Lokal (kg)";"25/10/2021";13,15;"1";"1"
+"184";"2";"Gula Pasir Lokal (kg)";"26/10/2021";13,15;"1";"1"
+"185";"2";"Gula Pasir Lokal (kg)";"27/10/2021";13,15;"1";"1"
+"186";"2";"Gula Pasir Lokal (kg)";"28/10/2021";13,15;"1";"1"
+"187";"I";"Beras";"21/10/2021";11,65;"1";NA
+"188";"I";"Beras";"22/10/2021";11,65;"1";NA
+"189";"I";"Beras";"25/10/2021";11,65;"1";NA
+"190";"I";"Beras";"26/10/2021";11,65;"1";NA
+"191";"I";"Beras";"27/10/2021";11,65;"1";NA
+"192";"I";"Beras";"28/10/2021";11,65;"1";NA
+"193";"1";"Beras Kualitas Bawah I (kg)";"21/10/2021";10,65;"1";NA
+"194";"1";"Beras Kualitas Bawah I (kg)";"22/10/2021";10,65;"1";NA
+"195";"1";"Beras Kualitas Bawah I (kg)";"25/10/2021";10,65;"1";NA
+"196";"1";"Beras Kualitas Bawah I (kg)";"26/10/2021";10,65;"1";NA
+"197";"1";"Beras Kualitas Bawah I (kg)";"27/10/2021";10,65;"1";NA
+"198";"1";"Beras Kualitas Bawah I (kg)";"28/10/2021";10,65;"1";NA
+"199";"2";"Beras Kualitas Bawah II (kg)";"21/10/2021";10,35;"1";NA
+"200";"2";"Beras Kualitas Bawah II (kg)";"22/10/2021";10,35;"1";NA
+"201";"2";"Beras Kualitas Bawah II (kg)";"25/10/2021";10,3;"1";NA
+"202";"2";"Beras Kualitas Bawah II (kg)";"26/10/2021";10,35;"1";NA
+"203";"2";"Beras Kualitas Bawah II (kg)";"27/10/2021";10,3;"1";NA
+"204";"2";"Beras Kualitas Bawah II (kg)";"28/10/2021";10,3;"1";NA
+"205";"3";"Beras Kualitas Medium I (kg)";"21/10/2021";11,7;"1";NA
+"206";"3";"Beras Kualitas Medium I (kg)";"22/10/2021";11,7;"1";NA
+"207";"3";"Beras Kualitas Medium I (kg)";"25/10/2021";11,7;"1";NA
+"208";"3";"Beras Kualitas Medium I (kg)";"26/10/2021";11,7;"1";NA
+"209";"3";"Beras Kualitas Medium I (kg)";"27/10/2021";11,7;"1";NA
+"210";"3";"Beras Kualitas Medium I (kg)";"28/10/2021";11,7;"1";NA
+"211";"4";"Beras Kualitas Medium II (kg)";"21/10/2021";11,45;"1";NA
+"212";"4";"Beras Kualitas Medium II (kg)";"22/10/2021";11,45;"1";NA
+"213";"4";"Beras Kualitas Medium II (kg)";"25/10/2021";11,45;"1";NA
+"214";"4";"Beras Kualitas Medium II (kg)";"26/10/2021";11,45;"1";NA
+"215";"4";"Beras Kualitas Medium II (kg)";"27/10/2021";11,45;"1";NA
+"216";"4";"Beras Kualitas Medium II (kg)";"28/10/2021";11,45;"1";NA
+"217";"5";"Beras Kualitas Super I (kg)";"21/10/2021";12,95;"1";NA
+"218";"5";"Beras Kualitas Super I (kg)";"22/10/2021";12,95;"1";NA
+"219";"5";"Beras Kualitas Super I (kg)";"25/10/2021";12,95;"1";NA
+"220";"5";"Beras Kualitas Super I (kg)";"26/10/2021";13;"1";NA
+"221";"5";"Beras Kualitas Super I (kg)";"27/10/2021";12,95;"1";NA
+"222";"5";"Beras Kualitas Super I (kg)";"28/10/2021";12,95;"1";NA
+"223";"6";"Beras Kualitas Super II (kg)";"21/10/2021";12,55;"1";NA
+"224";"6";"Beras Kualitas Super II (kg)";"22/10/2021";12,55;"1";NA
+"225";"6";"Beras Kualitas Super II (kg)";"25/10/2021";12,55;"1";NA
+"226";"6";"Beras Kualitas Super II (kg)";"26/10/2021";12,55;"1";NA
+"227";"6";"Beras Kualitas Super II (kg)";"27/10/2021";12,55;"1";NA
+"228";"6";"Beras Kualitas Super II (kg)";"28/10/2021";12,55;"1";NA
+"229";"II";"Daging Ayam";"21/10/2021";36;"1";NA
+"230";"II";"Daging Ayam";"22/10/2021";36,15;"1";NA
+"231";"II";"Daging Ayam";"25/10/2021";35,95;"1";NA
+"232";"II";"Daging Ayam";"26/10/2021";36,15;"1";NA
+"233";"II";"Daging Ayam";"27/10/2021";36,05;"1";NA
+"234";"II";"Daging Ayam";"28/10/2021";36,1;"1";NA
+"235";"1";"Daging Ayam Ras Segar (kg)";"21/10/2021";36;"1";NA
+"236";"1";"Daging Ayam Ras Segar (kg)";"22/10/2021";36,15;"1";NA
+"237";"1";"Daging Ayam Ras Segar (kg)";"25/10/2021";35,95;"1";NA
+"238";"1";"Daging Ayam Ras Segar (kg)";"26/10/2021";36,15;"1";NA
+"239";"1";"Daging Ayam Ras Segar (kg)";"27/10/2021";36,05;"1";NA
+"240";"1";"Daging Ayam Ras Segar (kg)";"28/10/2021";36,1;"1";NA
+"241";"III";"Daging Sapi";"21/10/2021";124,15;"1";NA
+"242";"III";"Daging Sapi";"22/10/2021";124,15;"1";NA
+"243";"III";"Daging Sapi";"25/10/2021";124,15;"1";NA
+"244";"III";"Daging Sapi";"26/10/2021";124,25;"1";NA
+"245";"III";"Daging Sapi";"27/10/2021";124,15;"1";NA
+"246";"III";"Daging Sapi";"28/10/2021";124,2;"1";NA
+"247";"1";"Daging Sapi Kualitas 1 (kg)";"21/10/2021";127,75;"1";NA
+"248";"1";"Daging Sapi Kualitas 1 (kg)";"22/10/2021";127,75;"1";NA
+"249";"1";"Daging Sapi Kualitas 1 (kg)";"25/10/2021";127,75;"1";NA
+"250";"1";"Daging Sapi Kualitas 1 (kg)";"26/10/2021";127,85;"1";NA
+"251";"1";"Daging Sapi Kualitas 1 (kg)";"27/10/2021";127,75;"1";NA
+"252";"1";"Daging Sapi Kualitas 1 (kg)";"28/10/2021";127,8;"1";NA
+"253";"2";"Daging Sapi Kualitas 2 (kg)";"21/10/2021";118,5;"1";NA
+"254";"2";"Daging Sapi Kualitas 2 (kg)";"22/10/2021";118,55;"1";NA
+"255";"2";"Daging Sapi Kualitas 2 (kg)";"25/10/2021";118,5;"1";NA
+"256";"2";"Daging Sapi Kualitas 2 (kg)";"26/10/2021";118,5;"1";NA
+"257";"2";"Daging Sapi Kualitas 2 (kg)";"27/10/2021";118,5;"1";NA
+"258";"2";"Daging Sapi Kualitas 2 (kg)";"28/10/2021";118,55;"1";NA
+"259";"IV";"Telur Ayam";"21/10/2021";23;"1";NA
+"260";"IV";"Telur Ayam";"22/10/2021";22,95;"1";NA
+"261";"IV";"Telur Ayam";"25/10/2021";23;"1";NA
+"262";"IV";"Telur Ayam";"26/10/2021";23,05;"1";NA
+"263";"IV";"Telur Ayam";"27/10/2021";23,05;"1";NA
+"264";"IV";"Telur Ayam";"28/10/2021";23,1;"1";NA
+"265";"1";"Telur Ayam Ras Segar
+ (kg)";"21/10/2021";23;"1";NA
+"266";"1";"Telur Ayam Ras Segar
+ (kg)";"22/10/2021";22,95;"1";NA
+"267";"1";"Telur Ayam Ras Segar
+ (kg)";"25/10/2021";23;"1";NA
+"268";"1";"Telur Ayam Ras Segar
+ (kg)";"26/10/2021";23,05;"1";NA
+"269";"1";"Telur Ayam Ras Segar
+ (kg)";"27/10/2021";23,05;"1";NA
+"270";"1";"Telur Ayam Ras Segar
+ (kg)";"28/10/2021";23,1;"1";NA
+"271";"V";"Bawang Merah";"21/10/2021";29,8;"1";NA
+"272";"V";"Bawang Merah";"22/10/2021";29,75;"1";NA
+"273";"V";"Bawang Merah";"25/10/2021";29,6;"1";NA
+"274";"V";"Bawang Merah";"26/10/2021";29,65;"1";NA
+"275";"V";"Bawang Merah";"27/10/2021";29,6;"1";NA
+"276";"V";"Bawang Merah";"28/10/2021";29,65;"1";NA
+"277";"1";"Bawang Merah Ukuran Sedang (kg)";"21/10/2021";29,8;"1";NA
+"278";"1";"Bawang Merah Ukuran Sedang (kg)";"22/10/2021";29,75;"1";NA
+"279";"1";"Bawang Merah Ukuran Sedang (kg)";"25/10/2021";29,6;"1";NA
+"280";"1";"Bawang Merah Ukuran Sedang (kg)";"26/10/2021";29,65;"1";NA
+"281";"1";"Bawang Merah Ukuran Sedang (kg)";"27/10/2021";29,6;"1";NA
+"282";"1";"Bawang Merah Ukuran Sedang (kg)";"28/10/2021";29,65;"1";NA
+"283";"VI";"Bawang Putih";"21/10/2021";29,45;"1";NA
+"284";"VI";"Bawang Putih";"22/10/2021";29,45;"1";NA
+"285";"VI";"Bawang Putih";"25/10/2021";29,45;"1";NA
+"286";"VI";"Bawang Putih";"26/10/2021";29,5;"1";NA
+"287";"VI";"Bawang Putih";"27/10/2021";29,45;"1";NA
+"288";"VI";"Bawang Putih";"28/10/2021";29,5;"1";NA
+"289";"1";"Bawang Putih Ukuran Sedang (kg)";"21/10/2021";29,45;"1";NA
+"290";"1";"Bawang Putih Ukuran Sedang (kg)";"22/10/2021";29,45;"1";NA
+"291";"1";"Bawang Putih Ukuran Sedang (kg)";"25/10/2021";29,45;"1";NA
+"292";"1";"Bawang Putih Ukuran Sedang (kg)";"26/10/2021";29,5;"1";NA
+"293";"1";"Bawang Putih Ukuran Sedang (kg)";"27/10/2021";29,45;"1";NA
+"294";"1";"Bawang Putih Ukuran Sedang (kg)";"28/10/2021";29,5;"1";NA
+"295";"VII";"Cabai Merah";"21/10/2021";34,4;"1";NA
+"296";"VII";"Cabai Merah";"22/10/2021";34,75;"1";NA
+"297";"VII";"Cabai Merah";"25/10/2021";35,45;"1";NA
+"298";"VII";"Cabai Merah";"26/10/2021";35,4;"1";NA
+"299";"VII";"Cabai Merah";"27/10/2021";35,35;"1";NA
+"300";"VII";"Cabai Merah";"28/10/2021";35,35;"1";NA
+"301";"1";"Cabai Merah Besar (kg)";"21/10/2021";33,35;"1";NA
+"302";"1";"Cabai Merah Besar (kg)";"22/10/2021";33,7;"1";NA
+"303";"1";"Cabai Merah Besar (kg)";"25/10/2021";33,85;"1";NA
+"304";"1";"Cabai Merah Besar (kg)";"26/10/2021";33,85;"1";NA
+"305";"1";"Cabai Merah Besar (kg)";"27/10/2021";33,75;"1";NA
+"306";"1";"Cabai Merah Besar (kg)";"28/10/2021";33,6;"1";NA
+"307";"2";"Cabai Merah Keriting  (kg)";"21/10/2021";34,6;"1";NA
+"308";"2";"Cabai Merah Keriting  (kg)";"22/10/2021";34,95;"1";NA
+"309";"2";"Cabai Merah Keriting  (kg)";"25/10/2021";35,8;"1";NA
+"310";"2";"Cabai Merah Keriting  (kg)";"26/10/2021";35,6;"1";NA
+"311";"2";"Cabai Merah Keriting  (kg)";"27/10/2021";35,55;"1";NA
+"312";"2";"Cabai Merah Keriting  (kg)";"28/10/2021";35,6;"1";NA
+"313";"VIII";"Cabai Rawit";"21/10/2021";39,4;"1";NA
+"314";"VIII";"Cabai Rawit";"22/10/2021";38,95;"1";NA
+"315";"VIII";"Cabai Rawit";"25/10/2021";37,7;"1";NA
+"316";"VIII";"Cabai Rawit";"26/10/2021";37,4;"1";NA
+"317";"VIII";"Cabai Rawit";"27/10/2021";37,25;"1";NA
+"318";"VIII";"Cabai Rawit";"28/10/2021";37,05;"1";NA
+"319";"1";"Cabai Rawit Hijau (kg)";"21/10/2021";35,95;"1";NA
+"320";"1";"Cabai Rawit Hijau (kg)";"22/10/2021";35,6;"1";NA
+"321";"1";"Cabai Rawit Hijau (kg)";"25/10/2021";34,8;"1";NA
+"322";"1";"Cabai Rawit Hijau (kg)";"26/10/2021";34,55;"1";NA
+"323";"1";"Cabai Rawit Hijau (kg)";"27/10/2021";34,2;"1";NA
+"324";"1";"Cabai Rawit Hijau (kg)";"28/10/2021";34,1;"1";NA
+"325";"2";"Cabai Rawit Merah (kg)";"21/10/2021";40,65;"1";NA
+"326";"2";"Cabai Rawit Merah (kg)";"22/10/2021";40,05;"1";NA
+"327";"2";"Cabai Rawit Merah (kg)";"25/10/2021";38,45;"1";NA
+"328";"2";"Cabai Rawit Merah (kg)";"26/10/2021";38,15;"1";NA
+"329";"2";"Cabai Rawit Merah (kg)";"27/10/2021";38,1;"1";NA
+"330";"2";"Cabai Rawit Merah (kg)";"28/10/2021";37,75;"1";NA
+"331";"IX";"Minyak Goreng";"21/10/2021";16,8;"1";NA
+"332";"IX";"Minyak Goreng";"22/10/2021";16,85;"1";NA
+"333";"IX";"Minyak Goreng";"25/10/2021";16,95;"1";NA
+"334";"IX";"Minyak Goreng";"26/10/2021";17,05;"1";NA
+"335";"IX";"Minyak Goreng";"27/10/2021";17,05;"1";NA
+"336";"IX";"Minyak Goreng";"28/10/2021";17,2;"1";NA
+"337";"1";"Minyak Goreng Curah (kg)";"21/10/2021";16,2;"1";NA
+"338";"1";"Minyak Goreng Curah (kg)";"22/10/2021";16,25;"1";NA
+"339";"1";"Minyak Goreng Curah (kg)";"25/10/2021";16,4;"1";NA
+"340";"1";"Minyak Goreng Curah (kg)";"26/10/2021";16,5;"1";NA
+"341";"1";"Minyak Goreng Curah (kg)";"27/10/2021";16,55;"1";NA
+"342";"1";"Minyak Goreng Curah (kg)";"28/10/2021";16,6;"1";NA
+"343";"2";"Minyak Goreng Kemasan Bermerk 1 (kg)";"21/10/2021";17,15;"1";NA
+"344";"2";"Minyak Goreng Kemasan Bermerk 1 (kg)";"22/10/2021";17,2;"1";NA
+"345";"2";"Minyak Goreng Kemasan Bermerk 1 (kg)";"25/10/2021";17,3;"1";NA
+"346";"2";"Minyak Goreng Kemasan Bermerk 1 (kg)";"26/10/2021";17,35;"1";NA
+"347";"2";"Minyak Goreng Kemasan Bermerk 1 (kg)";"27/10/2021";17,4;"1";NA
+"348";"2";"Minyak Goreng Kemasan Bermerk 1 (kg)";"28/10/2021";17,55;"1";NA
+"349";"3";"Minyak Goreng Kemasan Bermerk 2 (kg)";"21/10/2021";16,65;"1";NA
+"350";"3";"Minyak Goreng Kemasan Bermerk 2 (kg)";"22/10/2021";16,7;"1";NA
+"351";"3";"Minyak Goreng Kemasan Bermerk 2 (kg)";"25/10/2021";16,8;"1";NA
+"352";"3";"Minyak Goreng Kemasan Bermerk 2 (kg)";"26/10/2021";16,85;"1";NA
+"353";"3";"Minyak Goreng Kemasan Bermerk 2 (kg)";"27/10/2021";16,9;"1";NA
+"354";"3";"Minyak Goreng Kemasan Bermerk 2 (kg)";"28/10/2021";17,05;"1";NA
+"355";"X";"Gula Pasir";"21/10/2021";14,05;"1";NA
+"356";"X";"Gula Pasir";"22/10/2021";14,25;"1";NA
+"357";"X";"Gula Pasir";"25/10/2021";14,05;"1";NA
+"358";"X";"Gula Pasir";"26/10/2021";14,05;"1";NA
+"359";"X";"Gula Pasir";"27/10/2021";14,05;"1";NA
+"360";"X";"Gula Pasir";"28/10/2021";14,05;"1";NA
+"361";"1";"Gula Pasir Kualitas Premium (kg)";"21/10/2021";15,2;"1";NA
+"362";"1";"Gula Pasir Kualitas Premium (kg)";"22/10/2021";15,25;"1";NA
+"363";"1";"Gula Pasir Kualitas Premium (kg)";"25/10/2021";15,25;"1";NA
+"364";"1";"Gula Pasir Kualitas Premium (kg)";"26/10/2021";15,25;"1";NA
+"365";"1";"Gula Pasir Kualitas Premium (kg)";"27/10/2021";15,25;"1";NA
+"366";"1";"Gula Pasir Kualitas Premium (kg)";"28/10/2021";15,25;"1";NA
+"367";"2";"Gula Pasir Lokal (kg)";"21/10/2021";13,15;"1";NA
+"368";"2";"Gula Pasir Lokal (kg)";"22/10/2021";13,55;"1";NA
+"369";"2";"Gula Pasir Lokal (kg)";"25/10/2021";13,15;"1";NA
+"370";"2";"Gula Pasir Lokal (kg)";"26/10/2021";13,15;"1";NA
+"371";"2";"Gula Pasir Lokal (kg)";"27/10/2021";13,15;"1";NA
+"372";"2";"Gula Pasir Lokal (kg)";"28/10/2021";13,15;"1";NA
