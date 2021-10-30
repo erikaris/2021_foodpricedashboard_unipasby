@@ -98,59 +98,80 @@ server <- function(input, output, session) {
   })
   
   provinces <- reactive({
-    read.csv2("provinces.csv")
+    df <- as.data.frame(list())
+    withProgress(message = 'Sedang membaca data provinsi', value = 0, {
+      df <- read.csv2("provinces.csv")
+    })
+    df
   })
   
   markets <- reactive({
-    read.csv2("markets.csv")
+    df <- as.data.frame(list())
+    withProgress(message = 'Sedang membaca data pasar', value = 0, {
+      df <- read.csv2("markets.csv")
+    })
+    df
   })
   
   highchart_map_id <- reactive({
-    read.csv("highchart_map_id.csv")
+    df <- as.data.frame(list())
+    withProgress(message = 'Sedang membaca data highchart map id', value = 0, {
+      df <- read.csv("highchart_map_id.csv")
+    })
+    df
   })
   
   highchart_map_data <- reactive({
-    commodity_prices <- commodity_prices()
-    provinces <- provinces()
-    highchart_map_id <- highchart_map_id()
-    
-    commodity_prices %>% 
-      left_join(provinces, by = c("province" = "id")) %>% 
-      left_join(highchart_map_id, by = c("label" = "provinsi"))
+    df <- as.data.frame(list())
+    withProgress(message = 'Sedang membaca data highchart', value = 0, {
+      commodity_prices <- commodity_prices() %>% 
+        group_by(Komoditas..Rp., province) %>% 
+        slice_max(tanggal)
+      
+      provinces <- provinces()
+      highchart_map_id <- highchart_map_id()
+      
+      df <- commodity_prices %>% 
+        left_join(provinces, by = c("province" = "id")) %>% 
+        left_join(highchart_map_id, by = c("label" = "provinsi"))
+    })
+    df
   })
   
   output$card_1 <- renderUI(h2(commodity_prices() %>% select(Komoditas..Rp.) %>% n_distinct()))
   output$card_2 <- renderUI(h2(markets() %>% nrow()))
-  
+
   commodity_max_price <- reactive({
     commodity_prices() %>% slice_max(harga)
   })
-  
+
   output$card_max_price_rp <- renderUI(h2(paste("Rp.", commodity_max_price() %>% select(harga) %>% unique())))
   output$card_max_price_item <- renderUI(paste(commodity_max_price() %>% select(Komoditas..Rp.) %>% unique(), collapase = ", "))
-  
+
   commodity_min_price <- reactive({
     commodity_prices() %>% slice_min(harga)
   })
-  
+
   output$card_min_price_rp <- renderUI(h2(paste("Rp.", commodity_min_price() %>% select(harga) %>% unique())))
   output$card_min_price_item <- renderUI(paste(commodity_min_price() %>% select(Komoditas..Rp.) %>% unique(), collapase = ", "))
-  
+
   output$plot_animated_slider <- renderUI({
     sliderInput("tanggal", "Tanggal",
                 min = min(commodity_prices()$tanggal), max = max(commodity_prices()$tanggal),
                 value = min(commodity_prices()$tanggal), animate = TRUE)
   })
-  
+
   output$plot_animated <- renderHighchart({
     req(input$tanggal)
-    
+
     commodity_prices() %>%
       filter(tanggal <= input$tanggal) %>%
       hchart("line", hcaes(x = tanggal, y = harga, group = Komoditas..Rp.))
   })
-  
+
   output$map_1 <- renderHighchart({
+    # print(head(highchart_map_data()))
+    
     hcmap(
       "https://code.highcharts.com/mapdata/countries/id/id-all.js",
       download_map_data = TRUE,
@@ -173,27 +194,25 @@ server <- function(input, output, session) {
       "))
     )
   })
-  
+
   map_1_on_click <- reactive({
     jsonlite::fromJSON(input$map_1_on_click)
   })
-  
+
   output$map_1_detail_header <- renderText({
     req(input$map_1_on_click)
     
-    provs <- highchart_map_data() %>% 
-      filter(province == map_1_on_click()$province[1]) %>% 
-      select(label) %>%
-      unique()
-      
-    paste("Harga komoditas Prov. ", paste(provs, collapse = " "))
+    data <- highchart_map_data() %>%
+      filter(province == map_1_on_click()$province[1])
+
+    paste("Harga komoditas Prov. ", paste(unique(data$label), collapse = " "))
   })
-  
+
   output$map_1_detail <- renderHighchart({
     req(input$map_1_on_click)
-    
-    highchart_map_data() %>% 
-      filter(province == map_1_on_click()$province[1]) %>% 
+
+    highchart_map_data() %>%
+      filter(province == map_1_on_click()$province[1]) %>%
       hchart("line", hcaes(x = tanggal, y = harga, group = Komoditas..Rp.))
   })
 }
