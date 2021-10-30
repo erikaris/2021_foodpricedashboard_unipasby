@@ -96,9 +96,12 @@ for (regid in regencies$id) {
     str_trim()
   
   reg <- regencies %>% dplyr::filter(id == regid)
-  markets_prov <- rep(reg$province, length(tmp_markets_label))
   
-  tmp_markets <- data.frame(province = markets_prov, regency = regid, id = tmp_markets_id, label = tmp_markets_label)
+  tmp_markets <- data.frame(id = tmp_markets_id, label = tmp_markets_label)
+  if (nrow(tmp_markets)) { # set province or regency only if df is not empty
+    tmp_markets$province = reg$province
+    tmp_markets$regency = regid
+  }
   
   if (is.null(markets)) markets = tmp_markets
   else markets = rbind(markets, tmp_markets)
